@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio Pessoal de Ana Júlia">
+    <meta name="keywords" content="portfólio, desenvolvimento, web, projetos, habilidades, acadêmico">
+    <meta name="author" content="[Seu Nome]">
+    <title>Portfólio Pessoal - Ana Júlia</title>
+
+   
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+       
+        header {
+            background-color: #34495e;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        header nav ul li {
+            margin-right: 20px;
+        }
+
+        header nav ul li a {
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        header nav ul li a:hover {
+            color: #ecf0f1;
+        }
+
+       
+        .container {
+            width: 90%;
+            margin: auto;
+            max-width: 1200px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        
+        #inicio {
+            text-align: center;
+            padding: 80px 0;
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        #inicio img {
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+
+        #inicio h1 {
+            font-size: 36px;
+        }
+
+        #inicio p {
+            font-size: 21px;
+            margin-top: 10px;
+        }
+
+       
+        #sobre {
+            background-color: #ecf0f1;
+            text-align: center;
+        }
+
+        #sobre h2 {
+            margin-bottom: 20px;
+        }
+
+        .sobre-info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .sobre-info div {
+            width: 30%;
+            margin: 15px 0;
+        }
+
+#projetos {
+    background-color: #fff;
+    padding: 60px 0;
+}
+
+#projetos h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+    color: #2c3e50;
+}
+
+#projetos .galeria-projetos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px; /* Adicionando um espaço entre os projetos */
+    margin-bottom: 40px; /* Espaço entre as galerias */
+}
+
+
+#projetos .galeria-projetos h3 {
+    width: 100%;
+    font-size: 24px;
+    color: #34495e;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+
+#projetos .projeto {
+    background-color: #ecf0f1;
+    padding: 20px;
+    width: 100%;
+    max-width: 380px; 
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; 
+}
+
+#projetos .projeto:hover {
+    transform: translateY(-10px); 
+}
+
+#projetos .projeto img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+#projetos .projeto h4 {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #2c3e50;
+}
+
+#projetos .projeto p {
+    font-size: 16px;
+    color: #7f8c8d;
+    margin-bottom: 15px;
+}
+
+#projetos .projeto a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #3498db;
+    font-weight: bold;
+}
+
+#projetos .projeto a:hover {
+    color: #2980b9;
+}
+
+
+@media (max-width: 768px) {
+    #projetos .galeria-projetos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #projetos .projeto {
+        max-width: 100%;
+        margin-bottom: 20px; 
+    }
+}
+
+@media (min-width: 769px) {
+    
+    #projetos .galeria-projetos {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #projetos .projeto {
+        width: 48%; 
+    }
+}
+
+
+        
+        #contato {
+            background-color: #ecf0f1;
+            text-align: center;
+        }
+
+        #contato form {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        #contato input, #contato textarea {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #contato button {
+            padding: 12px;
+            background-color: #34495e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #contato button:hover {
+            background-color: #2c3e50;
+        }
+
+        
+        #autenticacao {
+            display: flex;
+            justify-content: space-around;
+            padding: 60px 0;
+            background-color: #fff;
+        }
+
+        .auth-form {
+            width: 40%;
+            padding: 20px;
+            background-color: #ecf0f1;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .auth-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .auth-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .auth-form button:hover {
+            background-color: #2980b9;
+        }
+
+        .auth-form a {
+            text-align: center;
+            display: block;
+            margin-top: 10px;
+            color: #3498db;
+        }
+
+        
+        footer {
+            background-color: #34495e;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: #ecf0f1;
+        }
+
+        
+        @media (max-width: 768px) {
+            .sobre-info {
+                flex-direction: column;
+            }
+
+            #projetos .galeria-projetos {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .auth-form {
+                width: 80%;
+            }
+
+            #contato form {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Seção de Login e Cadastro -->
+<section id="autenticacao">
+    <div class="auth-form" id="form-login">
+        <h2>Login</h2>
+        <form onsubmit="event.preventDefault(); loginUser();">
+            <input type="email" id="email-login" placeholder="E-mail" required>
+            <input type="password" id="senha-login" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+        <a href="#" onclick="showCadastro();">Criar uma conta</a>
+    </div>
+
+    <div class="auth-form" id="form-cadastro" style="display: none;">
+        <h2>Cadastro</h2>
+        <form onsubmit="event.preventDefault(); cadastrarUser();">
+            <input type="text" id="nome-cadastro" placeholder="Nome Completo" required>
+            <input type="email" id="email-cadastro" placeholder="E-mail" required>
+            <input type="password" id="senha-cadastro" placeholder="Senha" required>
+            <button type="submit">Cadastrar</button>
+        </form>
+        <a href="#" onclick="showLogin();">Já tem uma conta? Entrar</a>
+    </div>
+</section>
+
+
+
+<script>
+    // Função para simular o cadastro do usuário
+    function cadastrarUser() {
+        const nome = document.getElementById('nome-cadastro').value;
+        const email = document.getElementById('email-cadastro').value;
+        const senha = document.getElementById('senha-cadastro').value;
+        
+        localStorage.setItem('user', JSON.stringify({ nome, email, senha }));
+        alert('Cadastro realizado com sucesso!');
+        showLogin();
+    }
+
+    // Função para mostrar a tela de login
+    function showLogin() {
+        document.getElementById('form-cadastro').style.display = 'none';
+        document.getElementById('form-login').style.display = 'block';
+    }
+
+    // Função para mostrar a tela de cadastro
+    function showCadastro() {
+        document.getElementById('form-login').style.display = 'none';
+        document.getElementById('form-cadastro').style.display = 'block';
+    }
+
+    // Função de login
+    function loginUser() {
+        const email = document.getElementById('email-login').value;
+        const senha = document.getElementById('senha-login').value;
+
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user && user.email === email && user.senha === senha) {
+            alert('Login bem-sucedido!');
+            localStorage.setItem('loggedIn', 'true');
+            showPortfolio();
+        } else {
+            alert('E-mail ou senha incorretos.');
+        }
+    }
+
+    // Função para mostrar o portfólio após login
+    function showPortfolio() {
+        document.getElementById('inicio').style.display = 'block';
+        document.getElementById('sobre').style.display = 'block';
+        document.getElementById('projetos').style.display = 'block';
+        document.getElementById('contato').style.display = 'block';
+        document.getElementById('autenticacao').style.display = 'none';
+        document.getElementById('login-link').style.display = 'none';
+        document.getElementById('logout-link').style.display = 'inline';
+    }
+
+    // Checando se o usuário está logado
+    if (localStorage.getItem('loggedIn')) {
+        showPortfolio();
+    } else {
+        showLogin();
+    }
+</script>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li><a href="#autenticacao" id="login-link">Login/Cadastro</a></li>
+            <li><a href="javascript:void(0);" id="logout-link" style="display: none;">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Página Inicial -->
+<section id="inicio" style="display: none;">
+    <div class="container">
+        <img src="AA.jpeg" alt="Ana Júlia">
+        <h1>Ana Júlia Moraes</h1>
+        <p>Desenvolvedor Web | Apaixonada pela criatividade, inovação e tecnologia.</p>
+    </div>
+</section>
+
+<!-- Seção Sobre -->
+<section id="sobre" style="display: none;">
+    <div class="container">
+        <h2>Sobre Mim</h2>
+        <div class="sobre-info">
+            <div>
+                <h3>Formação</h3>
+                <p>Ensino Médio - SESI Concelheiro Saraiva.
+                    Técnico em Desenvolvimento de Sistemas - SENAI.
+                    Técnico em Edificações - IFPI. </p>
+            </div>
+            <div>
+                <h3>Experiência Profissional</h3>
+                <p>Desenvolvimento de Identidade Visual para Projetos Acadêmicos, Empresariais e Pessoais.
+                Experiência na área de design e desenvolvimento de site para a empresa Desapego Piauí.</p>
+            </div>
+            <div>
+                <h3>Habilidades Técnicas</h3>
+                <p>JavaScript, HTML, CSS, Python, Canva, Photoshop, Pacote Office.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seção Projetos -->
+<section id="projetos" style="display: none;">
+    <div class="container">
+        <h2>Meus Projetos</h2>
+
+        <!-- Projetos Senai -->
+        <div class="galeria-projetos">
+            <h3>Projetos Senai</h3>
+
+            <!-- Projeto 1: Avaliação 1 -->
+            <div class="projeto">
+                <h4>Avaliação 1: Sistema para Professores</h4>
+                <p>Desenvolvimento de um site que permite ao professor se autenticar em um sistema para visualizar, registrar, excluir suas turmas, assim como registrar atividades para as suas turmas e sair do sistema.</p>
+                <a href="https://github.com/anamoraes716/Avaliacao1.git" target="_blank">Ver Código</a> | 
+                <a href="#" onclick="showDemo('demo1')">Ver Demo</a>
+                
+                <!-- Imagem do Demo do Projeto 1 -->
+                <div id="demo1" style="display:none;">
+                    <img id="img-demo1" src="I1.jpeg" alt="Demo do projeto 1" style="max-width: 100%; margin-top: 10px;">
+                </div>
+            </div>
+
+            <!-- Projeto 2: Avaliação 2 -->
+            <div class="projeto">
+                <h4>Avaliação 2: Sistema de Gerenciamento de Projetos</h4>
+                <p>Desenvolvimento de um site que permite o gerente de uma empresa criar projetos, se autenticar em um sistema para visualizar, registrar e excluir seus projetos, além de gerenciar as tarefas atribuídas à sua equipe e se desconectar do sistema.</p>
+                <a href="https://github.com/anamoraes716/avaliacao.2.git" target="_blank">Ver Código</a> | 
+                <a href="#" onclick="showDemo('demo2')">Ver Demo</a>
+                
+                <!-- Imagem do Demo do Projeto 2 -->
+                <div id="demo2" style="display:none;">
+                    <img id="img-demo2" src="I2.png" alt="Demo do projeto 2" style="max-width: 100%; margin-top: 10px;">
+                </div>
+            </div>
+
+            <!-- Projeto 3: Avaliação 3 -->
+            <div class="projeto">
+                <h4>Avaliação 3: Sistema para Agricultores</h4>
+                <p>Desenvolvimento de um site que permitirá ao agricultor se autenticar em um sistema para visualizar, registrar, excluir registros de plantações, assim como monitorar atividades agrícolas e sair do sistema.</p>
+                <a href="https://github.com/anamoraes716/avaliacao3.3.git" target="_blank">Ver Código</a> | 
+                <a href="#" onclick="showDemo('demo3')">Ver Demo</a>
+                
+                <!-- Imagem do Demo do Projeto 3 -->
+                <div id="demo3" style="display:none;">
+                    <img id="img-demo3" src="I3.png" alt="Demo do projeto 3" style="max-width: 100%; margin-top: 10px;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Projetos Sesi -->
+        <div class="galeria-projetos">
+            <h3>Projetos Sesi</h3>
+
+            <!-- Atividades de Ciências da Natureza -->
+            <div class="projeto">
+                <h4>Atividades de Ciências Da Natureza</h4>
+                <p>Atividades dos conjuntos avaliativos de Autoria , Resolução de Problemas, Diagnósticos, Projetos de Aprendizagem e Atividades orientadas. Em ordem.</p>
+                <a href="#" onclick="showDemo('demo4')">Ver Demo</a>
+                
+                <!-- Imagem do Demo do Projeto Atividades de Ciências da Natureza -->
+                <div id="demo4" style="display:none;">
+                    <img id="img-demo4" src="N.jpeg" alt="Demo do projeto de Ciências Da Natureza" style="max-width: 100%; margin-top: 10px;">
+                </div>
+            </div>
+
+            <!-- Atividades de Ciências Humanas -->
+            <div class="projeto">
+                <h4>Atividades de Ciências Humanas</h4>
+                <p>Atividades dos conjuntos avaliativos de Autoria , Resolução de Problemas, Diagnósticos, Projetos de Aprendizagem e Atividades orientadas. Em ordem.</p>
+                <a href="#" onclick="showDemo('demo5')">Ver Demo</a>
+                
+                <!-- Imagem do Demo do Projeto Atividades de Ciências Humanas -->
+                <div id="demo5" style="display:none;">
+                    <img id="img-demo5" src="H.jpeg" alt="Demo do projeto de Ciências Humanas" style="max-width: 100%; margin-top: 10px;">
+                </div>
+            </div>
+
+            <!-- Atividades de Linguagens e suas Tecnologias -->
+            <div class="projeto">
+                <h4>Atividades de Linguagens e suas Tecnologias</h4>
+                <p>Atividades dos conjuntos avaliativos de Autoria , Resolução de Problemas, Diagnósticos, Projetos de Aprendizagem e Atividades orientadas. Em ordem.</p>
+                <a href="#" onclick="showDemo('demo6')">Ver Demo</a>
+                
+                <!-- Imagem do Demo do Projeto Atividades de Linguagens e suas Tecnologias -->
+                <div id="demo6" style="display:none;">
+                    <img id="img-demo6" src="L.jpeg" alt="Demo do projeto de Linguagens e suas Tecnologias" style="max-width: 100%; margin-top: 10px;">
+                </div>
+            </div>
+
+            <!-- Atividades de Matemática e suas Tecnologias -->
+            <div class="projeto">
+                <h4>Atividades de Matemática e suas Tecnologias</h4>
+                <p>Atividades dos conjuntos avaliativos de Autoria , Resolução de Problemas, Diagnósticos, Projetos de Aprendizagem e Atividades orientadas. Em ordem.</p>
+                <a href="#" onclick="showDemo('demo7')">Ver Demo</a>
+                
+                <!-- Imagem do Demo do Projeto Atividades de Matemática e suas Tecnologias -->
+                <div id="demo7" style="display:none;">
+                    <img id="img-demo7" src="M.jpeg" alt="Demo do projeto de Matemática e suas Tecnologias" style="max-width: 100%; margin-top: 10px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+
+    // Função para exibir o demo de imagem
+    function showDemo(demoId) {
+        const demo = document.getElementById(demoId);
+        demo.style.display = demo.style.display === 'none' ? 'block' : 'none';
+    }
+
+</script>
+
+
+
+<!-- Seção Contato -->
+<section id="contato" style="display: none;">
+    <div class="container">
+        <h2>Contato</h2>
+        <form action="https://formspree.io/f/mjkvaona" method="POST">
+            <input type="text" name="nome" placeholder="Nome Completo" required>
+            <input type="email" name="email" placeholder="E-mail" required>
+            <input type="text" name="assunto" placeholder="Assunto" required>
+            <textarea name="mensagem" placeholder="Mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</section>
+
+<script>
+
+// Função de logout
+    document.getElementById('logout-link').onclick = function() {
+        localStorage.removeItem('loggedIn');
+        alert('Você foi desconectado.');
+        window.location.reload();
+    };
+    
+    </script>
+
+<!-- Rodapé -->
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Ana Júlia | Todos os direitos reservados</p>
+        <a href="https://github.com/anamoraes716" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/ana-julia-moraes-4b9a1924b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
+        <a href="mailto:anajuliam716@gmail.com">E-mail</a>
+    </div>
+</footer>
+
+
+
+</body>
+
+</html>
